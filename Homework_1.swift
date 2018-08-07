@@ -1,3 +1,5 @@
+import Foundation
+
 let firstConstant = "My name is "
 
 var name = "Oleg."
