@@ -32,7 +32,7 @@ for x in numberOfFreePlaces {
    }
 }
 
-for y in 0...9 {
+for y in 0...8 {
   if train[y] == 6 {
      freeCarriages += 1
   }
