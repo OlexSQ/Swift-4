@@ -86,3 +86,81 @@ for teamMember in team {
 
 	teamMember.say()
 }
+
+class Martian {
+	let nickname: String
+	var age: Int
+
+	init(nickname: String, age: Int) {
+		self.nickname = nickname
+		self.age = age
+	}
+
+	func say() {
+		print("Welcome to Mars")
+	}
+}
+
+class Alien: Martian {
+	override func say() {
+		print("I like humans")
+	}
+}
+
+class Predator: Martian {
+	override func say() {
+		print("I don't like humans")
+	}
+}
+
+let martian = Martian(nickname: "Boby", age: 143)
+let alien = Alien(nickname: "Momy", age: 96)
+let predator = Predator(nickname: "Coocy", age: 154)
+
+
+var allTogether: [AnyObject] = [human, cook, manager, wrestler, martian, alien, predator]
+
+for teamMember in allTogether {
+	print(teamMember)
+	if teamMember is Humans {
+		let humans = teamMember as! Humans
+		print("Name - \(humans.name)") 
+		print("Sex -  \(humans.sex)")
+		print("Weight -  \(humans.weight) kg")
+		print("Height \(humans.height) cm")
+
+		if teamMember is Teacher {
+			let t = teamMember as! Teacher
+			print("Age - \(t.age)")
+			print("Subject - \(t.subject)")
+		}
+
+		humans.say()
+
+	} else {
+		let mars = teamMember as! Martian
+		print("Nickname - \(mars.nickname)") 
+		print("Age -  \(mars.age)")
+
+		mars.say()
+	}
+}
+
+var marsTeam = [martian, alien, predator]
+
+if team.count > marsTeam.count {
+	for index in 0...team.count - 1 {
+		print(team[index])
+		if index < marsTeam.count {
+			print(marsTeam[index])
+		}
+	}
+} else {
+	for index in 0...marsTeam.count - 1 {
+		print(marsTeam[index])
+		if index < team.count {
+			print(team[index])
+		}
+	}
+}
+
